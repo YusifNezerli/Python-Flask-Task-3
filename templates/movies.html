@@ -1,0 +1,20 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    {% for movie in movies %}
+
+    <div class="card" style="width: 18rem; display: flex; column-gap: 15px; padding: 20px; padding-top: 50px;">
+        <div class="card-body">
+          <h5 class="card-title"><a style="text-decoration: none;" href="#">{{ movie.name }}</a></h5>
+          <p class="card-text">Producer: {{ movie.producer.name }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">IMDB: {{ movie.imdb }}</li>
+          <li class="list-group-item">Il: {{ movie.year }}</li>
+        </ul>
+      </div>
+
+      {% endfor %}
+      
+      {% endblock %}
